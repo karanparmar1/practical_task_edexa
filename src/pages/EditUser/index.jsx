@@ -3,10 +3,10 @@ import { useHistory } from 'react-router-dom';
 import UserForm from '../../components/user_form';
 import { isAuthenticated } from '../../utils/helper';
 
-const Register = (props) => {
+const EditUser = (props) => {
   const history = useHistory();
-  if (isAuthenticated()) history.push('/');
-  return <UserForm title="Register" {...props} />;
+  if (!isAuthenticated()) history.push('/');
+  return <UserForm title="Edit User" {...props} />;
 };
 
-export default Register;
+export default EditUser;
